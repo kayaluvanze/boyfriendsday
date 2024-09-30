@@ -3,18 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random No Button</title>
-    <link rel="stylesheet" href="style.css"/>
+    <title>Toni, do you love me?</title>
+    <style>
+        body {
+            text-align: center;
+            background-image: url('kissycat.gif'); /* Updated to use the correct GIF file */
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        #no-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
 </head>
 <body>
-    <div class="wrapper">
-        <h2 class="question">Do you love me?</h2>
-        <img class="gif" alt="gif" src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbjJvdWZzYXc1NGJ6aGp1cDE3b2dyNnVzOGN1andkMjVrMmRzeGwwZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3OhXBaoR1tVPW/giphy.gif" />
-        <div class="btn-group">
-            <button class="yes-btn">Yes</button>
-            <button class="no-btn">No</button>
-        </div>
-    </div>
-    <script src="script.js"></script>
+    <h1>Toni, do you love me?</h1>
+    <button id="yes-button">Yes</button>
+    <button id="no-button">No</button>
+
+    <script>
+        const noButton = document.getElementById('no-button');
+        
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noButton.clientWidth);
+            const y = Math.random() * (window.innerHeight - noButton.clientHeight);
+            noButton.style.left = x + 'px';
+            noButton.style.top = y + 'px';
+        });
+    </script>
 </body>
 </html>
