@@ -2,6 +2,7 @@ body {
     background-color: #add8e6; /* Baby blue background */
     font-family: Arial, sans-serif;
     text-align: center;
+    overflow-x: hidden;
 }
 
 .title {
@@ -24,7 +25,7 @@ body {
     border-radius: 10px;
 }
 
-/* Falling hearts */
+/* Falling hearts container */
 .falling-hearts {
     position: fixed;
     top: 0;
@@ -33,4 +34,22 @@ body {
     height: 100%;
     pointer-events: none;
     overflow: hidden;
+    z-index: 1;
+}
+
+/* Heart animation */
+.heart {
+    position: absolute;
+    color: pink;
+    font-size: 24px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100vh);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
 }
