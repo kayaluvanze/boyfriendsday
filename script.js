@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const heart = document.createElement('div');
         heart.classList.add('heart');
         heart.textContent = '💖'; // Pink heart emoji
-        heart.style.left = Math.random() * 100 + 'vw';
-        heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-        heart.style.fontSize = Math.random() * 10 + 20 + 'px';
+        heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+        heart.style.animationDuration = Math.random() * 2 + 3 + 's'; // Random fall speed
+        heart.style.fontSize = Math.random() * 20 + 10 + 'px'; // Random size
+        heart.style.transform = `rotate(${Math.random() * 360}deg)`; // Random rotation
         fallingHearts.appendChild(heart);
 
         // Remove the heart after it falls off the screen
